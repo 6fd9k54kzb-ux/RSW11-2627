@@ -257,16 +257,17 @@ h1, h2, h3, h4 {
   font-size: .85rem;
   display: none;
 }
-.quiz-q .feedback.correct {
+.quiz-q .feedback[data-type="correct"] {
   background: var(--c-green-bg);
   border: 1px solid var(--c-green-border);
   color: var(--c-green-text);
-  display: block;
 }
-.quiz-q .feedback.wrong {
+.quiz-q .feedback[data-type="wrong"] {
   background: var(--c-red-bg);
   border: 1px solid var(--c-red-border);
   color: var(--c-red-text);
+}
+.quiz-q .feedback.show {
   display: block;
 }
 
@@ -638,24 +639,24 @@ body.teacher-mode .solution-inline {
       <label><input type="radio" name="q1_1" value="a"> primärer Sektor</label>
       <label><input type="radio" name="q1_1" value="b"> sekundärer Sektor</label>
       <label><input type="radio" name="q1_1" value="c"> tertiärer Sektor</label>
-      <div class="feedback correct">Richtig! Eine Kita erbringt eine Dienstleistung (Betreuung, Bildung) und gehoert damit zum tertiären Sektor.</div>
-      <div class="feedback wrong">Nicht ganz. Eine Kita erbringt eine Dienstleistung. Sie gehoert zum tertiären Sektor.</div>
+      <div class="feedback" data-type="correct">Richtig! Eine Kita erbringt eine Dienstleistung (Betreuung, Bildung) und gehoert damit zum tertiären Sektor.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Eine Kita erbringt eine Dienstleistung. Sie gehoert zum tertiären Sektor.</div>
     </div>
     <div class="quiz-q" data-correct="b">
       <p class="q-text">2. Was ist das Hauptmerkmal des sekundären Sektors?</p>
       <label><input type="radio" name="q1_2" value="a"> Rohstoffe werden aus der Natur gewonnen</label>
       <label><input type="radio" name="q1_2" value="b"> Rohstoffe werden zu Produkten verarbeitet</label>
       <label><input type="radio" name="q1_2" value="c"> Es werden Dienstleistungen erbracht</label>
-      <div class="feedback correct">Richtig! Im sekundären Sektor werden Rohstoffe zu fertigen Produkten verarbeitet.</div>
-      <div class="feedback wrong">Leider falsch. Im sekundären Sektor werden Rohstoffe zu fertigen Produkten verarbeitet (z.&nbsp;B. Industrie, Handwerk).</div>
+      <div class="feedback" data-type="correct">Richtig! Im sekundären Sektor werden Rohstoffe zu fertigen Produkten verarbeitet.</div>
+      <div class="feedback" data-type="wrong">Leider falsch. Im sekundären Sektor werden Rohstoffe zu fertigen Produkten verarbeitet (z.&nbsp;B. Industrie, Handwerk).</div>
     </div>
     <div class="quiz-q" data-correct="c">
       <p class="q-text">3. Warum spricht man in Deutschland von einer &bdquo;Dienstleistungsgesellschaft&ldquo;?</p>
       <label><input type="radio" name="q1_3" value="a"> Weil es keine Industrie mehr gibt</label>
       <label><input type="radio" name="q1_3" value="b"> Weil alle Rohstoffe importiert werden</label>
       <label><input type="radio" name="q1_3" value="c"> Weil über 70&nbsp;% der Beschäftigten im Dienstleistungssektor arbeiten</label>
-      <div class="feedback correct">Richtig! Der Grossteil der Beschäftigten in Deutschland arbeitet im tertiären Sektor.</div>
-      <div class="feedback wrong">Nicht ganz. Man spricht von einer Dienstleistungsgesellschaft, weil über 70&nbsp;% der Beschäftigten im tertiären Sektor arbeiten. Industrie gibt es weiterhin.</div>
+      <div class="feedback" data-type="correct">Richtig! Der Grossteil der Beschäftigten in Deutschland arbeitet im tertiären Sektor.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Man spricht von einer Dienstleistungsgesellschaft, weil über 70&nbsp;% der Beschäftigten im tertiären Sektor arbeiten. Industrie gibt es weiterhin.</div>
     </div>
     <button class="btn" onclick="checkQuiz('quiz1', 0)">Auswerten</button>
     <div class="quiz-result" id="result1"></div>
@@ -807,40 +808,40 @@ body.teacher-mode .solution-inline {
       <label><input type="radio" name="q2_1" value="a"> Ein Produkt wird an einem einzigen Tag hergestellt</label>
       <label><input type="radio" name="q2_1" value="b"> Erstellung und Verbrauch der Dienstleistung fallen zeitlich zusammen</label>
       <label><input type="radio" name="q2_1" value="c"> Nur eine Person fuehrt die gesamte Dienstleistung aus</label>
-      <div class="feedback correct">Richtig! Beim uno-actu-Prinzip wird die Dienstleistung im selben Moment erbracht und &bdquo;verbraucht&ldquo; (Zusammenfall von Erstellung und Absatz).</div>
-      <div class="feedback wrong">Nicht ganz. Das uno-actu-Prinzip bedeutet, dass Erstellung und Verbrauch einer Dienstleistung zeitlich zusammenfallen.</div>
+      <div class="feedback" data-type="correct">Richtig! Beim uno-actu-Prinzip wird die Dienstleistung im selben Moment erbracht und &bdquo;verbraucht&ldquo; (Zusammenfall von Erstellung und Absatz).</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Das uno-actu-Prinzip bedeutet, dass Erstellung und Verbrauch einer Dienstleistung zeitlich zusammenfallen.</div>
     </div>
     <div class="quiz-q" data-correct="a">
       <p class="q-text">2. Was ist ein wesentlicher Unterschied zwischen dem Output einer Fabrik und dem Outcome einer Kita?</p>
       <label><input type="radio" name="q2_2" value="a"> Der Output der Fabrik ist messbar, das Outcome der Kita oft erst langfristig sichtbar</label>
       <label><input type="radio" name="q2_2" value="b"> Die Fabrik hat keinen Transformationsprozess</label>
       <label><input type="radio" name="q2_2" value="c"> Die Kita verwendet keine Produktionsfaktoren</label>
-      <div class="feedback correct">Richtig! Industrielle Produkte kann man zählen und messen. Die Wirkung pädagogischer Arbeit zeigt sich oft erst langfristig.</div>
-      <div class="feedback wrong">Leider falsch. Der entscheidende Unterschied: Fabrikoutput ist direkt messbar, das Outcome sozialer Arbeit zeigt sich oft erst langfristig.</div>
+      <div class="feedback" data-type="correct">Richtig! Industrielle Produkte kann man zählen und messen. Die Wirkung pädagogischer Arbeit zeigt sich oft erst langfristig.</div>
+      <div class="feedback" data-type="wrong">Leider falsch. Der entscheidende Unterschied: Fabrikoutput ist direkt messbar, das Outcome sozialer Arbeit zeigt sich oft erst langfristig.</div>
     </div>
     <div class="quiz-q" data-correct="c">
       <p class="q-text">3. Warum folgen soziale Unternehmen oft nicht dem erwerbswirtschaftlichen Prinzip?</p>
       <label><input type="radio" name="q2_3" value="a"> Weil sie keine Mitarbeiter haben</label>
       <label><input type="radio" name="q2_3" value="b"> Weil Dienstleistungen nicht bezahlt werden</label>
       <label><input type="radio" name="q2_3" value="c"> Weil ihr Hauptziel ein gesellschaftlicher oder sozialer Zweck ist, nicht Gewinnmaximierung</label>
-      <div class="feedback correct">Richtig! Not-for-Profit-Organisationen stellen den sozialen Zweck ueber die Gewinnerzielung. überschüsse werden reinvestiert.</div>
-      <div class="feedback wrong">Nicht ganz. Soziale Unternehmen haben Mitarbeitende und erhalten Geld. Aber ihr Ziel ist nicht Gewinn, sondern ein gesellschaftlicher Zweck.</div>
+      <div class="feedback" data-type="correct">Richtig! Not-for-Profit-Organisationen stellen den sozialen Zweck ueber die Gewinnerzielung. überschüsse werden reinvestiert.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Soziale Unternehmen haben Mitarbeitende und erhalten Geld. Aber ihr Ziel ist nicht Gewinn, sondern ein gesellschaftlicher Zweck.</div>
     </div>
     <div class="quiz-q" data-correct="b">
       <p class="q-text">4. Was bedeutet &bdquo;Mitwirkung des Dienstleistungsempfängers&ldquo;?</p>
       <label><input type="radio" name="q2_4" value="a"> Der Kunde bezahlt fuer die Dienstleistung</label>
       <label><input type="radio" name="q2_4" value="b"> Der Empfänger muss aktiv beteiligt sein, damit die Dienstleistung gelingen kann</label>
       <label><input type="radio" name="q2_4" value="c"> Der Empfänger stellt die Dienstleistung selbst her</label>
-      <div class="feedback correct">Richtig! Ohne die aktive Beteiligung des Empfängers (z.&nbsp;B. des Kindes, das mitarbeitet) kann eine soziale Dienstleistung nicht gelingen.</div>
-      <div class="feedback wrong">Leider falsch. Mitwirkung bedeutet, dass der Empfänger aktiv am Prozess beteiligt sein muss, damit die Dienstleistung gelingt.</div>
+      <div class="feedback" data-type="correct">Richtig! Ohne die aktive Beteiligung des Empfängers (z.&nbsp;B. des Kindes, das mitarbeitet) kann eine soziale Dienstleistung nicht gelingen.</div>
+      <div class="feedback" data-type="wrong">Leider falsch. Mitwirkung bedeutet, dass der Empfänger aktiv am Prozess beteiligt sein muss, damit die Dienstleistung gelingt.</div>
     </div>
     <div class="quiz-q" data-correct="a">
       <p class="q-text">5. Welcher Produktionsfaktor ist bei einer sozialen Dienstleistung besonders wichtig?</p>
       <label><input type="radio" name="q2_5" value="a"> Arbeitskraft (pädagogisches Wissen, Empathie)</label>
       <label><input type="radio" name="q2_5" value="b"> Material und Werkstoffe</label>
       <label><input type="radio" name="q2_5" value="c"> Maschinen und Fliessbander</label>
-      <div class="feedback correct">Richtig! Bei sozialen Dienstleistungen steht die menschliche Arbeitskraft mit ihren Kompetenzen im Mittelpunkt.</div>
-      <div class="feedback wrong">Nicht ganz. Während in der Industrie Maschinen zentral sind, ist bei sozialen Dienstleistungen die menschliche Arbeitskraft der wichtigste Faktor.</div>
+      <div class="feedback" data-type="correct">Richtig! Bei sozialen Dienstleistungen steht die menschliche Arbeitskraft mit ihren Kompetenzen im Mittelpunkt.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Während in der Industrie Maschinen zentral sind, ist bei sozialen Dienstleistungen die menschliche Arbeitskraft der wichtigste Faktor.</div>
     </div>
     <button class="btn" onclick="checkQuiz('quiz2', 1)">Auswerten</button>
     <div class="quiz-result" id="result2"></div>
@@ -945,40 +946,40 @@ body.teacher-mode .solution-inline {
       <label><input type="radio" name="q3_1" value="a"> Beide Seiten haben die gleichen Informationen</label>
       <label><input type="radio" name="q3_1" value="b"> Es gibt einen Zielkonflikt und eine Informationsasymmetrie zwischen Auftraggeber und Auftragnehmer</label>
       <label><input type="radio" name="q3_1" value="c"> Der Agent hat weniger Informationen als der Prinzipal</label>
-      <div class="feedback correct">Richtig! Der Zielkonflikt (unterschiedliche Interessen) und die Informationsasymmetrie (Agent weiss mehr) sind die Grundlagen des Problems.</div>
-      <div class="feedback wrong">Nicht ganz. Die Grundlage ist: Der Agent hat MEHR Informationen als der Prinzipal, und beide verfolgen unterschiedliche Ziele.</div>
+      <div class="feedback" data-type="correct">Richtig! Der Zielkonflikt (unterschiedliche Interessen) und die Informationsasymmetrie (Agent weiss mehr) sind die Grundlagen des Problems.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Die Grundlage ist: Der Agent hat MEHR Informationen als der Prinzipal, und beide verfolgen unterschiedliche Ziele.</div>
     </div>
     <div class="quiz-q" data-correct="a">
       <p class="q-text">2. Was bedeutet &bdquo;Moral Hazard&ldquo;?</p>
       <label><input type="radio" name="q3_2" value="a"> Das Risiko, dass der Agent seinen Informationsvorsprung zum eigenen Vorteil ausnutzt</label>
       <label><input type="radio" name="q3_2" value="b"> Eine moralische Verpflichtung des Agenten</label>
       <label><input type="radio" name="q3_2" value="c"> Ein Versicherungsbetrug</label>
-      <div class="feedback correct">Richtig! Moral Hazard (Verhaltensrisiko) bedeutet, dass der Agent seine bessere Informationslage oder die fehlende Beobachtbarkeit zum eigenen Vorteil ausnutzen koennte.</div>
-      <div class="feedback wrong">Leider falsch. Moral Hazard ist das Verhaltensrisiko: Der Agent koennte seinen Informationsvorsprung oder die fehlende Ueberwachung zu seinem Vorteil ausnutzen.</div>
+      <div class="feedback" data-type="correct">Richtig! Moral Hazard (Verhaltensrisiko) bedeutet, dass der Agent seine bessere Informationslage oder die fehlende Beobachtbarkeit zum eigenen Vorteil ausnutzen koennte.</div>
+      <div class="feedback" data-type="wrong">Leider falsch. Moral Hazard ist das Verhaltensrisiko: Der Agent koennte seinen Informationsvorsprung oder die fehlende Ueberwachung zu seinem Vorteil ausnutzen.</div>
     </div>
     <div class="quiz-q" data-correct="c">
       <p class="q-text">3. Was ist ein &bdquo;bedingter Vertrag&ldquo; als Gegenmassnahme?</p>
       <label><input type="radio" name="q3_3" value="a"> Ein Vertrag, der nur unter bestimmten Bedingungen gueltig ist</label>
       <label><input type="radio" name="q3_3" value="b"> Ein befristeter Arbeitsvertrag</label>
       <label><input type="radio" name="q3_3" value="c"> Ein Vertrag, bei dem die Verguetung an das Ergebnis geknuepft ist, um Ziele anzugleichen</label>
-      <div class="feedback correct">Richtig! Ein bedingter Vertrag koppelt die Verguetung an die Leistung/das Ergebnis, sodass Agent und Prinzipal ähnliche Ziele verfolgen.</div>
-      <div class="feedback wrong">Nicht ganz. Ein bedingter Vertrag ist ein Anreizsystem: Die Verguetung wird an das Ergebnis geknuepft, um die Ziele von Prinzipal und Agent anzugleichen.</div>
+      <div class="feedback" data-type="correct">Richtig! Ein bedingter Vertrag koppelt die Verguetung an die Leistung/das Ergebnis, sodass Agent und Prinzipal ähnliche Ziele verfolgen.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Ein bedingter Vertrag ist ein Anreizsystem: Die Verguetung wird an das Ergebnis geknuepft, um die Ziele von Prinzipal und Agent anzugleichen.</div>
     </div>
     <div class="quiz-q" data-correct="b">
       <p class="q-text">4. Warum ist Monitoring bei sozialen Dienstleistungen besonders schwierig?</p>
       <label><input type="radio" name="q3_4" value="a"> Weil soziale Einrichtungen keine Mitarbeiter kontrollieren duerfen</label>
       <label><input type="radio" name="q3_4" value="b"> Weil die Leistung immateriell ist und sich Qualität schwer messen lässt</label>
       <label><input type="radio" name="q3_4" value="c"> Weil es im Sozialwesen keine Vorgesetzten gibt</label>
-      <div class="feedback correct">Richtig! Soziale Dienstleistungen sind immateriell. Man kann pädagogische Qualität nicht einfach zählen oder messen wie industrielle Produkte.</div>
-      <div class="feedback wrong">Leider falsch. Kontrolle ist moeglich, aber schwieriger, weil die Leistung immateriell ist und sich Qualität nicht einfach messen lässt.</div>
+      <div class="feedback" data-type="correct">Richtig! Soziale Dienstleistungen sind immateriell. Man kann pädagogische Qualität nicht einfach zählen oder messen wie industrielle Produkte.</div>
+      <div class="feedback" data-type="wrong">Leider falsch. Kontrolle ist moeglich, aber schwieriger, weil die Leistung immateriell ist und sich Qualität nicht einfach messen lässt.</div>
     </div>
     <div class="quiz-q" data-correct="c">
       <p class="q-text">5. Wer ist in der Kita-Beziehung der &bdquo;Prinzipal&ldquo;?</p>
       <label><input type="radio" name="q3_5" value="a"> Das Kind</label>
       <label><input type="radio" name="q3_5" value="b"> Die Erzieherin</label>
       <label><input type="radio" name="q3_5" value="c"> Die Eltern (bzw. der Kostenträger)</label>
-      <div class="feedback correct">Richtig! Die Eltern (oder das Jugendamt als Kostenträger) sind die Auftraggeber. Sie beauftragen die Kita mit Betreuung und Foerderung.</div>
-      <div class="feedback wrong">Nicht ganz. Prinzipal = Auftraggeber. Die Eltern beauftragen die Kita mit der Betreuung. Die Erzieherin ist der Agent, das Kind der Empfänger.</div>
+      <div class="feedback" data-type="correct">Richtig! Die Eltern (oder das Jugendamt als Kostenträger) sind die Auftraggeber. Sie beauftragen die Kita mit Betreuung und Foerderung.</div>
+      <div class="feedback" data-type="wrong">Nicht ganz. Prinzipal = Auftraggeber. Die Eltern beauftragen die Kita mit der Betreuung. Die Erzieherin ist der Agent, das Kind der Empfänger.</div>
     </div>
     <button class="btn" onclick="checkQuiz('quiz3', 2)">Auswerten</button>
     <div class="quiz-result" id="result3"></div>
@@ -1247,12 +1248,12 @@ body.teacher-mode .solution-inline {
     questions.forEach(q => {
       const correctAns = q.dataset.correct;
       const selected = q.querySelector('input:checked');
-      const feedbackCorrect = q.querySelector('.feedback.correct');
-      const feedbackWrong = q.querySelector('.feedback.wrong');
+      const feedbackCorrect = q.querySelector('.feedback[data-type="correct"]');
+      const feedbackWrong = q.querySelector('.feedback[data-type="wrong"]');
 
       // Reset
-      feedbackCorrect.className = 'feedback';
-      feedbackWrong.className = 'feedback';
+      feedbackCorrect.classList.remove('show');
+      feedbackWrong.classList.remove('show');
 
       if (!selected) {
         allAnswered = false;
@@ -1263,10 +1264,10 @@ body.teacher-mode .solution-inline {
 
       if (selected.value === correctAns) {
         correct++;
-        feedbackCorrect.className = 'feedback correct';
+        feedbackCorrect.classList.add('show');
         selected.parentElement.style.background = 'var(--c-green-bg)';
       } else {
-        feedbackWrong.className = 'feedback wrong';
+        feedbackWrong.classList.add('show');
         selected.parentElement.style.background = 'var(--c-red-bg)';
         // Highlight correct
         q.querySelectorAll('input').forEach(inp => {
@@ -1341,7 +1342,12 @@ body.teacher-mode .solution-inline {
             inp.parentElement.style.fontWeight = '700';
           }
         });
-        q.querySelector('.feedback.correct').style.display = document.body.classList.contains('teacher-mode') ? 'block' : 'none';
+        const fb = q.querySelector('.feedback[data-type="correct"]');
+        if (document.body.classList.contains('teacher-mode')) {
+          fb.classList.add('show');
+        } else {
+          fb.classList.remove('show');
+        }
       });
       // Show drag-and-drop solutions
       if (document.body.classList.contains('teacher-mode')) {
